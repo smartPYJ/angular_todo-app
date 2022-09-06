@@ -1,0 +1,59 @@
+.heading-section {
+    background: linear-gradient(to right, rgb(2, 228, 171), rgb(74, 215, 240));
+
+    padding: 100px;
+
+    h1.title {
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 5px 2px rgba(black, 0.24);
+
+    }
+}
+
+.container {
+    max-width: 800px;
+}
+
+.add-todo-box {
+    padding: 25px;
+    box-shadow: 0px 5px 12px rgba(black, 0.07);
+    border-radius: 5px;
+    margin-top: -60px;
+    background-color: white;
+}
+
+.todo-item {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    
+    
+    .check-box {
+        display: flex;
+        flex-shrink: 0;
+        border: 2px solid #eee;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        margin-right: 20px;
+        transition: background-color 1s;
+
+
+        span.mdi-check {
+            font-size: 20px;
+            margin: auto;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+    }
+
+}
+
+.todo-item:hover .check-box {
+    background-color: #eee;
+    span.mdi-check {
+        opacity: 0.5;
+        
+    }
+}

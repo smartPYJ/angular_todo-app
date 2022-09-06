@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bulma/bulma.sass';
+@import '../node_modules/@mdi/font/scss/materialdesignicons.scss';
+
+.alt-button {
+    border: none;
+    background: linear-gradient(to right, rgb(231, 72, 99), rgb(245, 50, 50));
+    color: white;
+    opacity: 0.7;
+    font-weight:600;
+
+    &:hover {
+        opacity: 1;
+        color: white;
+        box-shadow: 0px 0px 0px 2px rgba(black, 0.12);
+    }
+
+    span.mdi-pickaxe {
+        margin-right: 10px;
+        font-weight: 700;
+    }
+}
