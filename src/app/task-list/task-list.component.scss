@@ -1,0 +1,150 @@
+.heading-section {
+    background: linear-gradient(to right, rgb(2, 228, 171), rgb(74, 215, 240));
+
+    padding: 100px;
+
+    h1.title {
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 5px 2px rgba(black, 0.24);
+
+    }
+}
+
+.container {
+    max-width: 800px;
+}
+
+.add-todo-box {
+    padding: 25px;
+    box-shadow: 0px 5px 12px rgba(black, 0.07);
+    border-radius: 5px;
+    margin-top: -60px;
+    background-color: white;
+}
+
+.todo-item {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    padding: 35px 15px;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid#e3ebef;
+    border-radius: 8px;
+
+    &.completed {
+        color: #aaa;
+        text-decoration: line-through;
+
+        .check-box {
+            background: aqua;
+            border: aqua;
+
+            span.mdi-check {
+                opacity: 1;
+                color: gray;
+            }
+        }
+    }
+
+
+    .check-box {
+        display: flex;
+        flex-shrink: 0;
+        border: 2px solid #eee;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        margin-right: 20px;
+        transition: background-color 1s;
+
+
+
+
+        span.mdi-check {
+            font-size: 20px;
+            margin: auto;
+            margin-top: -3px;
+
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+    }
+
+}
+
+.todo-item:hover .check-box {
+    background-color: #eee;
+
+    span.mdi-check {
+        opacity: 0.5;
+
+    }
+
+
+}
+
+.todo-item .todo-control-box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+
+}
+
+.hide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    background: #aaa;
+    opacity: 1;
+    width:80px;
+    align-items: center;
+    padding: 7px;
+    color: azure;
+    border-radius: 5px;
+
+        // visibility: hidden;
+        // transform: translateY(5px);
+        // transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+
+}
+
+.todo-item:hover .todo-control-box {
+
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
+    transform: translateY(0)
+}
+
+.todo-control-box .todo-control-button {
+    background: #e3ebef;
+    padding: 7px 10px;
+    display: flex;
+
+    span.mdi {
+        font-size: 20px;
+    }
+
+    &:hover {
+        background: rgb(170, 163, 163);
+    }
+
+    &:first-child {
+        border-radius: 7px 0px 0px 0px;
+        color: black;
+    }
+
+    &:last-child {
+        border-radius: 0px 7px 0px 0px;
+        color: red;
+    }
+}

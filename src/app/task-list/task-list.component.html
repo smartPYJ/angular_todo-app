@@ -1,0 +1,65 @@
+<section class="heading-section">
+    <h1 class="title is-1 has-text-centered">Todo</h1>
+</section>
+
+<div class="container">
+
+    <div class="add-todo-box">
+
+        <form  #form = ngForm [formGroup]="tasksForm" (ngSubmit)="submitTaskData()" novalidate>
+
+            <h2 class="title is-5">New Todo</h2>
+
+            <div class="field is-grouped">
+                <p class="control is-expanded">
+                    <input ngModel #todoTextField='' class="input" name="text" type="text"  formControlName="details" placeholder="Add todo " required minlength="2">
+                </p> 
+                <p class="control">
+                    <button class="button alt-button" type="submit" [disabled]="!tasksForm.valid">
+                        <span class="mdi mdi-pickaxe"></span> Add
+
+                    </button>
+                </p>
+                <p class="help is-danger"  *ngIf="todoTextField.oninvalid" > Please enter the text of your todo</p>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="todo-list" >
+            <div class="todo-item" 
+            *ngFor="let tasks  of task" 
+            [class.completed] = 'tasks.completed'>
+                <div class="check-box ">
+                    <span class="mdi mdi-check"></span>
+                </div>
+                <div class="hide" (click)="toggle()">
+                    <span class="mdi mdi-eye ">{{isOpen ? 'Hide' : 'Show'}}</span>
+                </div>
+
+                <div [@.disabled]="isDisabled" class="todo-text" [@childAnimation]="isOpen ? 'open' : 'closed'">
+                    {{tasks.details}}
+                </div>
+
+                <div class="todo-control-box">
+                    <div class="todo-control-button">
+                        <span class="mdi mdi-notebook-edit-outline"></span>
+                    </div>
+                    <div class="todo-control-button"(click)="deleteTask(tasks)">
+                        <span class="mdi mdi-delete"></span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
